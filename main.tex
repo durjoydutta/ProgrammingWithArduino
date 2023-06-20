@@ -1,0 +1,135 @@
+%------------------------------------------Packages used-------------------------------------------------
+\documentclass[a4paper, 12pt, titlepage, oneside]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+\usepackage[top=5em,left=6.5em, right=6.5em, bottom=5em]{geometry}
+\usepackage{lipsum}
+\usepackage{titling}
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[listings,theorems]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+
+%--------------------------------------------------------------------------------------------------------
+%%%Arduino Specific Packages and styles%%%
+\usepackage{listings}
+\lstset{
+  language = Octave,
+  backgroundcolor=\color{white},   
+  basicstyle=\footnotesize\ttfamily,       
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                   
+  commentstyle=\color{gray},    
+  deletekeywords={...},           
+  escapeinside={\%*}{*)},          
+  extendedchars=true,              
+  frame=single,
+  framexleftmargin = 20pt,
+  keepspaces=true,                 
+  keywordstyle=\color{orange},       
+  morekeywords={*,...},            
+  numbers=left,                    
+  numbersep=5pt,                   
+  numberstyle=\footnotesize\color{gray}, 
+  rulecolor=\color{black},         
+  rulesepcolor=\color{blue},
+  showspaces=false,                
+  showstringspaces=false,          
+  showtabs=false,                  
+  stepnumber=1,                    
+  stringstyle=\color{orange},    
+  tabsize=2,                       
+  title=\lstname,
+  emphstyle=\bfseries\color{blue}%  style for emph={} 
+} 
+\input{arduinoLanguage.tex}
+%% language specific settings:
+\lstdefinestyle{Arduino}{%
+    language = Arduino,
+    keywords={void, int boolean},%                 define keywords
+    morecomment=[l]{//},%             treat // as comments
+    morecomment=[s]{/*}{*/},%         define /* ... */ comments
+    emph={HIGH, OUTPUT, LOW}%        keywords to emphasize
+}
+%---------------------------------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------------------------------------
+
+\graphicspath{{images/}}
+\hypersetup{
+    colorlinks = true,
+    urlcolor = blue!75!black,
+    linkcolor = blue!70!black,
+    }
+
+%\renewcommand{\baselinestretch}{1.75} 
+\addto\captionsenglish{\renewcommand*\contentsname{Table of Contents}}
+%-------------------------------------------------------
+%----------------------------------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{{\leftmark}}
+\fancyhead[L]{\rightmark}
+\setlength{\headheight}{10mm}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{1em}
+\pagenumbering{arabic}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+%-------------------------------------------------------
+\begin{document}
+%-------------------------------------------------------
+
+
+\begin{titlepage}
+\begin{titlepage}
+   \begin{center}
+        \vspace*{2cm} % Adjust spacings to ensure the title page is generally filled with text
+        \Large{\textbf{A Project on}}
+        
+        \vspace{0.1cm}        
+        \Huge{\textbf{Programming with Arduino}} 
+               
+        \vspace{5 cm}
+        \Large{By}        
+       
+        \vspace{5cm}
+        \large{\textbf{Durjoy Dutta Chaudhury}}        
+
+       \vfill
+    \end{center}
+\end{titlepage}
+\end{titlepage}
+%---------------------------Acknowledgement-----------------------------
+
+%-----------------------------------------------------------------------
+\pagebreak\tableofcontents
+%\listoffigures
+%\listoftables
+\pagebreak
+
+%-----------------------------------------------------------ChapterInputs--------------------------------
+
+    \input{projects/intro}
+    \input{projects/project1}
+    \input{projects/project2}    
+    \input{projects/project3} 
+    \input{projects/project4} 
+    \input{projects/project5} 
+    
+%---------------------------------------------------------------------------------------------------------
+
+
+\end{document}
